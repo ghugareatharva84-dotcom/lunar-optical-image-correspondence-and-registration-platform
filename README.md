@@ -65,69 +65,7 @@ frontend-only/
 
 ---
 
-## 🛠️ Getting Started
 
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (version 18.0 or newer)
-- npm (comes bundled with Node.js)
-
-### Installation
-
-1. Clone or open this folder in your terminal:
-   ```bash
-   cd frontend-only
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. (Optional) Configure environment variables:
-   Copy `.env.example` to `.env` if your backend API runs on a custom address:
-   ```bash
-   cp .env.example .env
-   ```
-   *Default API URL is `http://127.0.0.1:8000`.*
-
-4. Launch the local development server:
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:5173](http://localhost:5173) in your browser.
-
----
-
-## 📦 Production Build
-
-To compile a minified production bundle ready for deployment (e.g., Vercel, Netlify, GitHub Pages, or Cloudflare Pages):
-
-```bash
-npm run build
-```
-
-Preview the production build locally:
-
-```bash
-npm run preview
-```
-
----
-
-## 📤 Pushing to GitHub
-
-To push this frontend-only repository to GitHub:
-
-```bash
-# 1. Initialize git (if not already done)
-git init -b main
-
-# 2. Stage all frontend files
-git add .
-
-# 3. Create initial commit
-git commit -m "Initial commit: Chandrayaan-2 lunar registration frontend"
 
 # 4. Link your GitHub remote repository (replace with your repo URL)
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
