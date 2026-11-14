@@ -1,0 +1,5 @@
+import ResultImage from "./ResultImage";
+
+export default function DifferenceMap({ src, meanError, maxError, rmse }) {
+  return <section className="difference-section"><div className="section-top"><div><span className="eyebrow">ERROR VISUALIZATION</span><h2>Difference Map</h2></div><span className="section-note">REFERENCE VS REGISTERED</span></div><div className="difference-grid"><ResultImage title="Difference Map" subtitle="Absolute grayscale pixel difference" src={src} alt="Difference between reference and registered image" /><div className="error-stats panel"><span className="eyebrow">PIXEL ERROR STATISTICS</span><div><span>Mean Error</span><strong>{meanError == null ? "Not available" : `${meanError.toFixed(2)} px`}</strong></div><div><span>Maximum Error</span><strong>{maxError == null ? "Not available" : `${maxError.toFixed(2)} px`}</strong></div><div><span>Image RMSE</span><strong>{rmse == null ? "Not available" : `${rmse.toFixed(2)} px`}</strong></div><p>Difference statistics compare the aligned reference and registered images. They are not model confidence scores.</p></div></div></section>;
+}

@@ -1,0 +1,6 @@
+const stages = ["Image Upload", "Preprocessing", "Feature Detection", "Feature Matching", "Lowe Ratio Test", "RANSAC Validation", "Homography Estimation", "Image Registration", "Quality Evaluation"];
+
+export default function ProcessingPipeline({ active, loading, completed, failed }) {
+  const status = failed ? "FAILED" : completed ? "COMPLETE" : loading ? "LIVE EXECUTION" : "STANDBY";
+  return <section className="pipeline panel"><div className="section-top"><div><span className="eyebrow">COMPUTATION GRAPH</span><h2>Registration Pipeline</h2></div><span className={`pipeline-state ${failed ? "pipeline-failed" : ""}`}>{status}</span></div><div className="pipeline-track">{stages.map((stage, index) => { const state = failed && index === active ? "failed" : completed || index < active ? "done" : loading && index === active ? "active" : "pending"; return <div className={`pipeline-step ${state}`} key={stage}><span className="step-dot">{state === "done" ? "✓" : state === "failed" ? "✕" : state === "active" ? "●" : "○"}</span><span>{String(index + 1).padStart(2, "0")} {stage}</span></div>; })}</div></section>;
+}

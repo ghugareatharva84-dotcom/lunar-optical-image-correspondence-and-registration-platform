@@ -1,1 +1,137 @@
-# Hotel
+# Chandrayaan-2 Lunar Image Correspondence & Registration UI
+
+Modern, high-performance web interface for the ISRO Chandrayaan-2 lunar optical image correspondence and registration platform. Built with **React 19** and **Vite**.
+
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?logo=vite&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Frontend--Only-brightgreen)
+
+---
+
+## 🚀 Features
+
+- **300-Frame Scroll Canvas Animation:** Dynamic lunar orbital flyby rendering dynamically tied to page scroll position with progressive frame caching.
+- **Interactive Image Ingestion:** Drag-and-drop dual-image staging for source and reference lunar frames (OHRC, TMC-2, LROC-NAC).
+- **Consensus & Inlier Visualizer:** Inspection panels for feature matching (LoFTR / SIFT + USAC_MAGSAC), registered overlays, and difference maps.
+- **Analytical Metrics & Telemetry:** Real-time visual metrics for empirical convex hull coverage, 2D Shannon entropy, sub-pixel RMSE, and multi-factor confidence scores.
+- **Mission Registration Archive:** Historical registration log viewer with detailed inspections and batch purge support.
+
+---
+
+## 📁 Project Structure
+
+```text
+frontend-only/
+├── public/
+│   ├── favicon.svg             # App favicon
+│   ├── icons.svg               # SVG icons sheet
+│   └── frames/                 # 300 orbital animation frames (ezgif-frame-001..300)
+├── src/
+│   ├── assets/                 # Brand assets & static graphics
+│   ├── components/             # Reusable UI widgets & telemetry cards
+│   │   ├── ConfidenceScore.jsx
+│   │   ├── DifferenceMap.jsx
+│   │   ├── ErrorPanel.jsx
+│   │   ├── HomographyMatrix.jsx
+│   │   ├── ImageUploader.jsx
+│   │   ├── Loading.jsx
+│   │   ├── MatchAnalysis.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── ProcessingPipeline.jsx
+│   │   ├── RegistrationHistory.jsx
+│   │   ├── ResultImage.jsx
+│   │   ├── ScrollCanvasBackground.jsx
+│   │   ├── SensorSelector.jsx
+│   │   ├── SpatialDistribution.jsx
+│   │   ├── StatsCard.jsx
+│   │   └── TechnicalDetails.jsx
+│   ├── pages/
+│   │   └── Dashboard.jsx       # Main application view
+│   ├── services/
+│   │   └── api.js              # REST client for backend registration service
+│   ├── styles/                 # Dedicated component stylesheets
+│   ├── App.css
+│   ├── App.jsx                 # Application state orchestration
+│   ├── index.css               # Core styling & design system tokens
+│   └── main.jsx                # React root entrypoint
+├── .env.example                # Sample environment variables
+├── .gitignore                  # GitHub ignore patterns
+├── eslint.config.js            # Linter configuration
+├── index.html                  # HTML entrypoint
+├── package.json                # Project metadata & npm dependencies
+├── package-lock.json           # Locked dependency tree
+└── vite.config.js              # Vite bundler configuration
+```
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (version 18.0 or newer)
+- npm (comes bundled with Node.js)
+
+### Installation
+
+1. Clone or open this folder in your terminal:
+   ```bash
+   cd frontend-only
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. (Optional) Configure environment variables:
+   Copy `.env.example` to `.env` if your backend API runs on a custom address:
+   ```bash
+   cp .env.example .env
+   ```
+   *Default API URL is `http://127.0.0.1:8000`.*
+
+4. Launch the local development server:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 📦 Production Build
+
+To compile a minified production bundle ready for deployment (e.g., Vercel, Netlify, GitHub Pages, or Cloudflare Pages):
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+---
+
+## 📤 Pushing to GitHub
+
+To push this frontend-only repository to GitHub:
+
+```bash
+# 1. Initialize git (if not already done)
+git init -b main
+
+# 2. Stage all frontend files
+git add .
+
+# 3. Create initial commit
+git commit -m "Initial commit: Chandrayaan-2 lunar registration frontend"
+
+# 4. Link your GitHub remote repository (replace with your repo URL)
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+
+# 5. Push to GitHub
+git push -u origin main
+```

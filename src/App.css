@@ -1,0 +1,88 @@
+/* =========================================================
+   CHANDRAYAAN-2 LUNAR IMAGE REGISTRATION - APP STYLES
+   ========================================================= */
+
+/* Before / After Comparison Slider Fix */
+.comparison {
+  padding: 19px;
+  margin-top: 15px;
+}
+
+.comparison-stage {
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+  background: #02080b;
+  margin-top: 18px;
+}
+
+/* Base registered image and comparison-before container fill full stage identically */
+.comparison-stage > img,
+.comparison-before,
+.comparison-before img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Clip-path container stays full stage size and reveals source frame without rescaling */
+.comparison-before {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  pointer-events: none;
+  border-right: none;
+}
+
+.comparison-before img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: none;
+  pointer-events: none;
+}
+
+/* Thin glowing cyan divider line tracking comparison percentage */
+.comparison-divider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--cyan, #6fe6df);
+  box-shadow: 0 0 10px rgba(111, 230, 223, 0.7), 0 0 2px #fff;
+  pointer-events: none;
+  z-index: 2;
+  transform: translateX(-50%);
+}
+
+/* Interactive slider range input */
+.comparison-stage input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 3;
+  margin: 0;
+}
+
+.comparison-labels {
+  display: flex;
+  justify-content: space-between;
+  color: #7c969a;
+  font: 9px 'DM Mono', monospace;
+  padding-top: 10px;
+}
+
+@media (max-width: 680px) {
+  .comparison-stage {
+    height: 250px;
+  }
+}

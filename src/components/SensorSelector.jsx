@@ -1,0 +1,4 @@
+const sensors = { OHRC: "Optical High Resolution Camera", TMC: "Terrain Mapping Camera", IIRS: "Imaging Infrared Spectrometer", Unknown: "Dataset metadata not specified" };
+export default function SensorSelector({ value, onChange }) {
+  return <div className="control-panel panel"><div className="section-top"><div><span className="eyebrow">DATASET METADATA</span><h2>Sensor / Dataset</h2></div><span className="control-icon">◎</span></div><div className="sensor-options">{Object.keys(sensors).map((sensor) => <button type="button" className={value === sensor ? "selected" : ""} onClick={() => onChange(sensor)} key={sensor}><b>{sensor}</b><span>{sensors[sensor]}</span></button>)}</div></div>;
+}
