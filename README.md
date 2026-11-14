@@ -64,12 +64,3 @@ frontend-only/
 ```
 
 ---
-
-
-
-# 4. Link your GitHub remote repository (replace with your repo URL)
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-
-# 5. Push to GitHub
-git push -u origin main
-```
